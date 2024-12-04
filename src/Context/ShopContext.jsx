@@ -38,7 +38,7 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         if(localStorage.getItem('auth-token')){
-            fetch('http:localhost:3000/addtocart',{
+            fetch('http://localhost:3000/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -55,7 +55,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
         if(localStorage.getItem('auth-token')){
             if(localStorage.getItem('auth-token')){
-                fetch('http:localhost:3000/removefromcart',{
+                fetch('http://localhost:3000/removefromcart',{
                     method:'POST',
                     headers:{
                         Accept:'application/form-data',
